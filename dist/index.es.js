@@ -329,6 +329,7 @@ var RectShape = function RectShape(_data, onChange) {
     canvas2D.lineTo(x + width, y + height);
     canvas2D.lineTo(x, y + height);
     canvas2D.closePath();
+    canvas2D.stroke();
     canvas2D.restore();
 
     if (selected) {

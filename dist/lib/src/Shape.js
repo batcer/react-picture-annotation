@@ -50,6 +50,7 @@ var RectShape = /** @class */ (function () {
             canvas2D.lineTo(x + width, y + height);
             canvas2D.lineTo(x, y + height);
             canvas2D.closePath();
+            canvas2D.stroke();
             canvas2D.restore();
             if (selected) {
                 canvas2D.fillStyle = shapeBackground;
