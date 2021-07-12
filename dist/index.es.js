@@ -326,8 +326,14 @@ var RectShape = function RectShape(_data, onChange) {
     canvas2D.restore();
 
     if (selected) {
-      canvas2D.fillStyle = shapeBackground;
-      canvas2D.fillRect(x, y, width, height);
+      canvas2D.fillStyle = shapeBackground; // canvas2D.fillRect(x, y, width, height);
+
+      canvas2D.moveTo(x, y);
+      canvas2D.lineTo(x + width, y);
+      canvas2D.lineTo(x + width, y + height);
+      canvas2D.lineTo(x, y + height);
+      canvas2D.closePath();
+      canvas2D.fill();
     } else {
       var _comment = _this.annotationData.comment;
 
