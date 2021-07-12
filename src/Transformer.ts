@@ -66,7 +66,18 @@ export default class Transformer implements ITransformer {
         width: this.nodeWidth,
         height: this.nodeWidth,
       });
-      canvas2D.fillRect(x, y, width, height);
+
+      canvas2D.moveTo(x, y);
+      canvas2D.lineTo(x + width, y);
+      canvas2D.lineTo(x + width, y + height);
+      canvas2D.lineTo(x, y + height);
+      canvas2D.closePath();
+      // const nodes = this.shape.getAnnotationData().mark.nodes;
+      // canvas2D.moveTo(nodes[0].x, nodes[0].y);
+      // for (let i = 1; i < nodes.length; i++) {
+      //   canvas2D.lineTo(nodes[i].x, nodes[i].y);
+      // }
+      canvas2D.fill();
     }
 
     canvas2D.restore();

@@ -31,6 +31,16 @@ export interface IShapeStyle {
   transformerSize: number;
 }
 
+export interface INode {
+  x: number;
+  y: number;
+}
+
+export interface IPolygonBase {
+  isClosed: boolean;
+  nodes: INode[];
+}
+
 export interface IShapeBase {
   x: number;
   y: number;
