@@ -328,6 +328,7 @@ var RectShape = function RectShape(_data, onChange) {
     if (selected) {
       canvas2D.fillStyle = shapeBackground; // canvas2D.fillRect(x, y, width, height);
 
+      canvas2D.beginPath();
       canvas2D.moveTo(x, y);
       canvas2D.lineTo(x + width, y);
       canvas2D.lineTo(x + width, y + height);
